@@ -1,5 +1,5 @@
 import { useEffect, useState, createContext, useContext } from 'react';
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { supabase, Role, UserProfile } from './lib/supabase';
 import { Loader2 } from 'lucide-react';
 import LandingPage from './pages/LandingPage';
@@ -102,7 +102,7 @@ export default function App() {
 
   return (
     <AuthContext.Provider value={{ user, profile, loading, signOut }}>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={!user ? <LoginPage /> : <Navigate to="/app/dashboard" />} />
@@ -126,7 +126,7 @@ export default function App() {
           
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </AuthContext.Provider>
   );
 }
