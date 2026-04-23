@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #DC2626; /* Red-600 */
+  --color-primary-dark: #B91C1C; /* Red-700 */
+  --color-primary-light: #F87171; /* Red-400 */
+  --color-bg: #F8FAFC;
+  --color-text-main: #1E293B;
+  --color-text-muted: #64748B;
+  --sidebar-w: 240px;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-text-main bg-bg;
+  }
+}
+
+.bento-grid {
+  @apply grid gap-5;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(140px, auto);
+}
+
+.bento-card {
+  @apply bg-white rounded-2xl border border-slate-200 p-5 shadow-sm flex flex-col transition-all hover:shadow-md;
+}
+
+.bento-welcome {
+  @apply col-span-2 row-span-1 bg-linear-to-br from-primary to-primary-dark text-white border-none;
+}
+
+.bento-main-list {
+  @apply col-span-2 row-span-3;
+}
+
+.bento-action {
+  @apply col-span-1 row-span-2 bg-slate-900 text-white border-none;
+}
+
+.bento-stat {
+  @apply col-span-1 row-span-1;
+}
+
+.btn-primary {
+  @apply px-4 py-2 bg-primary text-white rounded-lg font-semibold transition-all hover:bg-primary-dark hover:shadow-lg active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.nav-item-active {
+  @apply bg-red-50 text-primary shadow-none border-none;
+}
+
+.input-field {
+  @apply w-full px-4 py-2 bg-white border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all;
+}

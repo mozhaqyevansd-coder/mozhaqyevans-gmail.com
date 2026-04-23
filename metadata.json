@@ -1,0 +1,6 @@
+{
+  "name": "SMK Prima Unggul CBT",
+  "description": "Sistem Ujian Online (Computer Based Test) untuk SMK Prima Unggul. Mendukung peran Admin, Guru, dan Siswa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["Authentication", "Online Examination", "Role Management"]
+}
